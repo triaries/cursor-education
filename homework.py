@@ -1,7 +1,7 @@
 """
 This is a list of functions that should be completed.
 """
-
+import string
 from typing import Any
 from typing import List
 
@@ -15,10 +15,7 @@ def is_two_object_has_same_value(first: Any, second: Any) -> bool:
     If @first and @second has same value should return True
     In another case should return False
     """
-    if first == second:
-        return True
-    else:
-        return False
+    return first == second
 
 
 def is_two_objects_has_same_type(first: Any, second: Any) -> bool:
@@ -26,21 +23,15 @@ def is_two_objects_has_same_type(first: Any, second: Any) -> bool:
     If @first and @second has same type should return True
     In another case should return False
     """
-    if type(first) == type(second):
-        return True
-    else:
-        return False
+    return type(first) == type(second)
 
 
 def is_two_objects_is_the_same_objects(first: Any, second: Any) -> bool:
     """
-    If @first and @second has same type should return True
+    If @first and @second are the same  should return True
     In another case should return False
     """
-    if first is second:
-        return True
-    else:
-        return False
+    return first is second
 
 
 def multiple_ints(first_value: int, second_value: int) -> int:
@@ -113,10 +104,7 @@ def is_word_in_text(word: str, text: str) -> bool:
         >>> False
 
     """
-    if text.find(word) == -1:
-        return False
-    else:
-        return True
+    return word in text
 
 
 def some_loop_exercise() -> list:
@@ -124,9 +112,11 @@ def some_loop_exercise() -> list:
     Use loop to create list that contain int values from 0 to 12 except 6 and 7
     """
     list1 = []
+    list_with_excludes = [6, 7]
     for i in range(13):
-        if i != 6 and i != 7:
+        if i not in list_with_excludes:
             list1.append(i)
+
     return list1
 
 def remove_from_list_all_negative_numbers(data: List[int]) -> list:
@@ -146,7 +136,7 @@ def remove_from_list_all_negative_numbers(data: List[int]) -> list:
 
 def alphabet() -> dict:
     """
-    Create dict which keys is alphabetic characters. And values their number in alphabet
+    Create dict which keys is numbers of alphabetic characters. And values are appropriate alphabetic characters.
     Notes You could see an implementaion of this one in test, but create another one
     Examples:
         alphabet()
@@ -154,7 +144,7 @@ def alphabet() -> dict:
     """
     dict = {}
     num = 0
-    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    alphabet = string.ascii_lowercase
     for i in alphabet:
         num += 1
         dict[num] = i
