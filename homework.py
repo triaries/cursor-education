@@ -140,7 +140,7 @@ def alphabet() -> dict:
     Notes You could see an implementaion of this one in test, but create another one
     Examples:
         alphabet()
-        >>> {"a": 1, "b": 2 ...}
+        >>> {"1": a, "2": b ...}
     """
     dict = {}
     num = 0
@@ -164,10 +164,7 @@ def simple_sort(data: List[int]) -> List[list]:
     for k in range(data_lenght - 1):
         for i in range(data_lenght - 1):
             if data[i] > data[i + 1]:
-                a = data[i]
-                data[i] = data[i + 1]
-                data[i + 1] = a
-
+                data[i], data[i + 1] = data[i + 1], data[i]
     return data
 
 
